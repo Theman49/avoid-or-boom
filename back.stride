@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="back" extends="Actor" extends-java="Actor" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.util.*" enable="true"/>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields/>
+    <constructors>
+        <constructor access="public" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <call expression="setImage(&quot;back.png&quot;)" expression-java="setImage(&quot;back.png&quot;)" enable="true"/>
+            </body>
+        </constructor>
+    </constructors>
+    <methods>
+        <method access="public" type="void" type-java="void" name="act" enable="true">
+            <javadoc xml:space="preserve">Act - do whatever the back wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <call expression="click()" expression-java="click()" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="click" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <if condition="Greenfoot.mouseClicked(this)" condition-java="Greenfoot.mouseClicked(this)" enable="true">
+                    <ifStatements>
+                        <call expression="setImage(&quot;backClicked.png&quot;)" expression-java="setImage(&quot;backClicked.png&quot;)" enable="true"/>
+                        <call expression="Greenfoot.delay(2)" expression-java="Greenfoot.delay(2)" enable="true"/>
+                        <call expression="setImage(&quot;back.png&quot;)" expression-java="setImage(&quot;back.png&quot;)" enable="true"/>
+                        <call expression="Greenfoot.delay(2)" expression-java="Greenfoot.delay(2)" enable="true"/>
+                        <call expression="Greenfoot.setWorld(new home())" expression-java="Greenfoot.setWorld( new home())" enable="true"/>
+                    </ifStatements>
+                </if>
+            </body>
+        </method>
+    </methods>
+</class>

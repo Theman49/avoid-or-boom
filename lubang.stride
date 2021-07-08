@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="lubang" extends="garisJalan" extends-java="garisJalan" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.util.*" enable="true"/>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields/>
+    <constructors>
+        <constructor access="public" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <call expression="setImage(&quot;lubang.png&quot;)" expression-java="setImage(&quot;lubang.png&quot;)" enable="true"/>
+            </body>
+        </constructor>
+    </constructors>
+    <methods>
+        <method access="public" type="void" type-java="void" name="act" enable="true">
+            <javadoc xml:space="preserve">Act - do whatever the lubang wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <call expression="move(speed)" expression-java="move(speed)" enable="true"/>
+                <call expression="touch()" expression-java="touch()" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="looping" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <variable type="int" type-java="int" name="random" value="Greenfoot.getRandomNumber(2)" value-java="Greenfoot.getRandomNumber(2)" enable="true"/>
+                <variable type="int" type-java="int" name="a" value="0" value-java="0" enable="true"/>
+                <variable type="int" type-java="int" name="score" value="((MyWorld)getWorld()).score" value-java="((MyWorld)getWorld()).score" enable="true"/>
+                <if condition="getX()==0" condition-java="getX() == 0" enable="true">
+                    <ifStatements>
+                        <if condition="random==0" condition-java="random == 0" enable="true">
+                            <ifStatements>
+                                <assign dest="a" dest-java="a" src="188" src-java="188" enable="true"/>
+                            </ifStatements>
+                            <elseIf condition="random==1" condition-java="random == 1">
+                                <assign dest="a" dest-java="a" src="245" src-java="245" enable="true"/>
+                            </elseIf>
+                        </if>
+                        <call expression="setLocation(400,a)" expression-java="setLocation(400, a)" enable="true"/>
+                        <assign dest="((MyWorld)getWorld()).score" dest-java="((MyWorld)getWorld()).score" src="score+10" src-java="score + 10" enable="true"/>
+                    </ifStatements>
+                    <elseIf condition="getX()==400-1" condition-java="getX() == 400 - 1">
+                        <call expression="setLocation(getX()-400,getY())" expression-java="setLocation(getX() - 400, getY())" enable="true"/>
+                    </elseIf>
+                </if>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="touch" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <if condition="isTouching(roda.class)" condition-java="isTouching(roda.class)" enable="true">
+                    <ifStatements>
+                        <variable type="boom" type-java="boom" name="boom" value="new boom()" value-java=" new boom()" enable="true"/>
+                        <variable type="int" type-java="int" name="tires" value="((MyWorld)getWorld()).tires" value-java="((MyWorld)getWorld()).tires" enable="true"/>
+                        <if condition="((MyWorld)getWorld()).tires==0" condition-java="((MyWorld)getWorld()).tires == 0" enable="true">
+                            <ifStatements>
+                                <call expression="getWorld().addObject(boom,getX()-50,getY())" expression-java="getWorld().addObject(boom, getX() - 50, getY())" enable="true"/>
+                                <call expression="Greenfoot.setSpeed(50)" expression-java="Greenfoot.setSpeed(50)" enable="true"/>
+                                <call expression="Greenfoot.setWorld(new gameOver())" expression-java="Greenfoot.setWorld( new gameOver())" enable="true"/>
+                            </ifStatements>
+                            <else>
+                                <call expression="getWorld().addObject(boom,getX()-50,getY())" expression-java="getWorld().addObject(boom, getX() - 50, getY())" enable="true"/>
+                                <call expression="Greenfoot.delay(5)" expression-java="Greenfoot.delay(5)" enable="true"/>
+                                <variable type="int" type-java="int" name="y" value="getY()" value-java="getY()" enable="true"/>
+                                <if condition="y==188" condition-java="y == 188" enable="true">
+                                    <ifStatements>
+                                        <assign dest="y" dest-java="y" src="245" src-java="245" enable="true"/>
+                                    </ifStatements>
+                                    <elseIf condition="y==245" condition-java="y == 245">
+                                        <assign dest="y" dest-java="y" src="188" src-java="188" enable="true"/>
+                                    </elseIf>
+                                </if>
+                                <call expression="getWorld().removeObject(boom)" expression-java="getWorld().removeObject(boom)" enable="true"/>
+                                <call expression="setLocation(400,y)" expression-java="setLocation(400, y)" enable="true"/>
+                                <assign dest="((MyWorld)getWorld()).tires" dest-java="((MyWorld)getWorld()).tires" src="tires-1" src-java="tires - 1" enable="true"/>
+                            </else>
+                        </if>
+                    </ifStatements>
+                </if>
+            </body>
+        </method>
+    </methods>
+</class>

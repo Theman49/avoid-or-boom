@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="help" extends="World" extends-java="World" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.util.*" enable="true"/>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields/>
+    <constructors>
+        <constructor access="public" enable="true">
+            <javadoc xml:space="preserve">Constructor for objects of class help.</javadoc>
+            <params/>
+            <throws/>
+            <delegate target="super" params="400,300,1" params-java="400, 300, 1"/>
+            <body>
+                <call expression="showText(&quot;Tires + 1&quot;,333,190)" expression-java="showText(&quot;Tires + 1&quot;, 333, 190)" enable="true"/>
+                <call expression="showText(&quot;Tires - 1&quot;,333,230)" expression-java="showText(&quot;Tires - 1&quot;, 333, 230)" enable="true"/>
+                <call expression="prepare()" expression-java="prepare()" enable="true"/>
+            </body>
+        </constructor>
+    </constructors>
+    <methods>
+        <method access="private" type="void" type-java="void" name="prepare" enable="true">
+            <javadoc xml:space="preserve">Prepare the world for the start of the program.
+That is: create the initial objects and add them to the world.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <call expression="setBackground(&quot;background3.png&quot;)" expression-java="setBackground(&quot;background3.png&quot;)" enable="true"/>
+                <variable type="carTutor" type-java="carTutor" name="carTutor" value="new carTutor()" value-java=" new carTutor()" enable="true"/>
+                <call expression="addObject(carTutor,62,215)" expression-java="addObject(carTutor, 62, 215)" enable="true"/>
+                <variable type="tangan" type-java="tangan" name="tangan" value="new tangan()" value-java=" new tangan()" enable="true"/>
+                <call expression="addObject(tangan,81,257)" expression-java="addObject(tangan, 81, 257)" enable="true"/>
+                <call expression="tangan.setRotation(-30)" expression-java="tangan.setRotation(-30)" enable="true"/>
+                <variable type="back" type-java="back" name="back" value="new back()" value-java=" new back()" enable="true"/>
+                <call expression="addObject(back,190,280)" expression-java="addObject(back, 190, 280)" enable="true"/>
+                <call expression="back.setLocation(205,275)" expression-java="back.setLocation(205, 275)" enable="true"/>
+                <call expression="back.setLocation(199,271)" expression-java="back.setLocation(199, 271)" enable="true"/>
+                <variable type="tutorial" type-java="tutorial" name="tutorial" value="new tutorial()" value-java=" new tutorial()" enable="true"/>
+                <call expression="addObject(tutorial,194,75)" expression-java="addObject(tutorial, 194, 75)" enable="true"/>
+            </body>
+        </method>
+    </methods>
+</class>

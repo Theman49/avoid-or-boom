@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="gameOver" extends="World" extends-java="World" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.util.*" enable="true"/>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields>
+        <variable access="public" type="int" type-java="int" name="score" value="MyWorld.score" value-java="MyWorld.score" enable="true"/>
+    </fields>
+    <constructors>
+        <constructor access="public" enable="true">
+            <javadoc xml:space="preserve">Constructor for objects of class gameOver.</javadoc>
+            <params/>
+            <throws/>
+            <delegate target="super" params="400,300,1" params-java="400, 300, 1"/>
+            <body>
+                <call expression="setBackground(&quot;gameOver.png&quot;)" expression-java="setBackground(&quot;gameOver.png&quot;)" enable="true"/>
+                <call expression="showText(&quot;Your Score : &quot;+score,270,100)" expression-java="showText(&quot;Your Score : &quot; + score, 270, 100)" enable="true"/>
+                <call expression="prepare()" expression-java="prepare()" enable="true"/>
+            </body>
+        </constructor>
+    </constructors>
+    <methods>
+        <method access="private" type="void" type-java="void" name="prepare" enable="true">
+            <javadoc xml:space="preserve">Prepare the world for the start of the program.
+That is: create the initial objects and add them to the world.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <variable type="backHome" type-java="backHome" name="backHome" value="new backHome()" value-java=" new backHome()" enable="true"/>
+                <call expression="addObject(backHome,333,231)" expression-java="addObject(backHome, 333, 231)" enable="true"/>
+                <variable type="restart" type-java="restart" name="restart" value="new restart()" value-java=" new restart()" enable="true"/>
+                <call expression="addObject(restart,333,189)" expression-java="addObject(restart, 333, 189)" enable="true"/>
+            </body>
+        </method>
+    </methods>
+</class>

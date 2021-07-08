@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="MyWorld" extends="World" extends-java="World" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.util.*" enable="true"/>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields>
+        <variable access="public" static="true" type="int" type-java="int" name="speed" value="2" value-java="2" enable="true"/>
+        <variable access="public" static="true" type="int" type-java="int" name="score" value="0" value-java="0" enable="true"/>
+        <variable access="public" static="true" type="int" type-java="int" name="tires" value="3" value-java="3" enable="true"/>
+        <variable access="public" static="true" type="int" type-java="int" name="malam" value="0" value-java="0" enable="true"/>
+    </fields>
+    <constructors>
+        <constructor access="public" enable="true">
+            <javadoc xml:space="preserve">Constructor for objects of class MyWorld.</javadoc>
+            <params/>
+            <throws/>
+            <delegate target="super" params="400,300,1" params-java="400, 300, 1"/>
+            <body>
+                <call expression="setBackground(&quot;bg.jpg&quot;)" expression-java="setBackground(&quot;bg.jpg&quot;)" enable="true"/>
+                <variable type="GreenfootSound" type-java="GreenfootSound" name="soundStart" value="new GreenfootSound(&quot;driving.mp3&quot;)" value-java=" new GreenfootSound(&quot;driving.mp3&quot;)" enable="true"/>
+                <call expression="soundStart.setVolume(70)" expression-java="soundStart.setVolume(70)" enable="true"/>
+                <call expression="soundStart.playLoop()" expression-java="soundStart.playLoop()" enable="true"/>
+                <assign dest="score" dest-java="score" src="0" src-java="0" enable="true"/>
+                <assign dest="tires" dest-java="tires" src="3" src-java="3" enable="true"/>
+                <call expression="showText(score+&quot; m&quot;,40,20)" expression-java="showText(score + &quot; m&quot;, 40, 20)" enable="true"/>
+                <call expression="showText(&quot;Tires : &quot;+tires,340,20)" expression-java="showText(&quot;Tires : &quot; + tires, 340, 20)" enable="true"/>
+                <call expression="Greenfoot.setSpeed(50)" expression-java="Greenfoot.setSpeed(50)" enable="true"/>
+                <call expression="prepare()" expression-java="prepare()" enable="true"/>
+                <call expression="act()" expression-java="act()" enable="true"/>
+            </body>
+        </constructor>
+    </constructors>
+    <methods>
+        <method access="private" type="void" type-java="void" name="prepare" enable="true">
+            <javadoc xml:space="preserve">Prepare the world for the start of the program.
+That is: create the initial objects and add them to the world.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <variable type="garisJalan" type-java="garisJalan" name="garisJalan" value="new garisJalan()" value-java=" new garisJalan()" enable="true"/>
+                <call expression="addObject(garisJalan,370,221)" expression-java="addObject(garisJalan, 370, 221)" enable="true"/>
+                <variable type="garisJalan" type-java="garisJalan" name="garisJalan2" value="new garisJalan()" value-java=" new garisJalan()" enable="true"/>
+                <call expression="addObject(garisJalan2,290,221)" expression-java="addObject(garisJalan2, 290, 221)" enable="true"/>
+                <variable type="garisJalan" type-java="garisJalan" name="garisJalan3" value="new garisJalan()" value-java=" new garisJalan()" enable="true"/>
+                <call expression="addObject(garisJalan3,210,221)" expression-java="addObject(garisJalan3, 210, 221)" enable="true"/>
+                <variable type="garisJalan" type-java="garisJalan" name="garisJalan4" value="new garisJalan()" value-java=" new garisJalan()" enable="true"/>
+                <call expression="addObject(garisJalan4,130,221)" expression-java="addObject(garisJalan4, 130, 221)" enable="true"/>
+                <variable type="garisJalan" type-java="garisJalan" name="garisJalan5" value="new garisJalan()" value-java=" new garisJalan()" enable="true"/>
+                <call expression="addObject(garisJalan5,50,221)" expression-java="addObject(garisJalan5, 50, 221)" enable="true"/>
+                <variable type="batas" type-java="batas" name="batas" value="new batas()" value-java=" new batas()" enable="true"/>
+                <call expression="addObject(batas,27,168)" expression-java="addObject(batas, 27, 168)" enable="true"/>
+                <variable type="batas" type-java="batas" name="batas2" value="new batas()" value-java=" new batas()" enable="true"/>
+                <call expression="addObject(batas2,79,168)" expression-java="addObject(batas2, 79, 168)" enable="true"/>
+                <variable type="batas" type-java="batas" name="batas3" value="new batas()" value-java=" new batas()" enable="true"/>
+                <call expression="addObject(batas3,131,168)" expression-java="addObject(batas3, 131, 168)" enable="true"/>
+                <variable type="awan" type-java="awan" name="awan" value="new awan()" value-java=" new awan()" enable="true"/>
+                <call expression="addObject(awan,278,24)" expression-java="addObject(awan, 278, 24)" enable="true"/>
+                <variable type="batas" type-java="batas" name="batas4" value="new batas()" value-java=" new batas()" enable="true"/>
+                <call expression="addObject(batas4,183,168)" expression-java="addObject(batas4, 183, 168)" enable="true"/>
+                <variable type="batas" type-java="batas" name="batas5" value="new batas()" value-java=" new batas()" enable="true"/>
+                <call expression="addObject(batas5,235,168)" expression-java="addObject(batas5, 235, 168)" enable="true"/>
+                <variable type="batas" type-java="batas" name="batas6" value="new batas()" value-java=" new batas()" enable="true"/>
+                <call expression="addObject(batas6,287,168)" expression-java="addObject(batas6, 287, 168)" enable="true"/>
+                <variable type="batas" type-java="batas" name="batas7" value="new batas()" value-java=" new batas()" enable="true"/>
+                <call expression="addObject(batas7,332,168)" expression-java="addObject(batas7, 332, 168)" enable="true"/>
+                <variable type="batas" type-java="batas" name="batas8" value="new batas()" value-java=" new batas()" enable="true"/>
+                <call expression="addObject(batas8,384,168)" expression-java="addObject(batas8, 384, 168)" enable="true"/>
+                <variable type="batas2" type-java="batas2" name="batas22" value="new batas2()" value-java=" new batas2()" enable="true"/>
+                <variable type="lubang" type-java="lubang" name="lubang" value="new lubang()" value-java=" new lubang()" enable="true"/>
+                <variable type="car01" type-java="car01" name="car01" value="new car01()" value-java=" new car01()" enable="true"/>
+                <call expression="addObject(lubang,320,245)" expression-java="addObject(lubang, 320, 245)" enable="true"/>
+                <call expression="addObject(car01,91,183)" expression-java="addObject(car01, 91, 183)" enable="true"/>
+                <variable type="roda" type-java="roda" name="roda" value="new roda()" value-java=" new roda()" enable="true"/>
+                <call expression="addObject(roda,133,196)" expression-java="addObject(roda, 133, 196)" enable="true"/>
+                <variable type="roda" type-java="roda" name="roda2" value="new roda()" value-java=" new roda()" enable="true"/>
+                <call expression="addObject(roda2,46,195)" expression-java="addObject(roda2, 46, 195)" enable="true"/>
+                <call expression="car01.setLocation(75,182)" expression-java="car01.setLocation(75, 182)" enable="true"/>
+                <call expression="roda.setLocation(117,195)" expression-java="roda.setLocation(117, 195)" enable="true"/>
+                <call expression="roda2.setLocation(30,195)" expression-java="roda2.setLocation(30, 195)" enable="true"/>
+                <call expression="addObject(batas22,25,261)" expression-java="addObject(batas22, 25, 261)" enable="true"/>
+                <variable type="batas2" type-java="batas2" name="batas23" value="new batas2()" value-java=" new batas2()" enable="true"/>
+                <call expression="addObject(batas23,75,261)" expression-java="addObject(batas23, 75, 261)" enable="true"/>
+                <variable type="batas2" type-java="batas2" name="batas24" value="new batas2()" value-java=" new batas2()" enable="true"/>
+                <call expression="addObject(batas24,125,261)" expression-java="addObject(batas24, 125, 261)" enable="true"/>
+                <variable type="batas2" type-java="batas2" name="batas25" value="new batas2()" value-java=" new batas2()" enable="true"/>
+                <call expression="addObject(batas25,175,261)" expression-java="addObject(batas25, 175, 261)" enable="true"/>
+                <variable type="batas2" type-java="batas2" name="batas26" value="new batas2()" value-java=" new batas2()" enable="true"/>
+                <call expression="addObject(batas26,225,261)" expression-java="addObject(batas26, 225, 261)" enable="true"/>
+                <variable type="batas2" type-java="batas2" name="batas27" value="new batas2()" value-java=" new batas2()" enable="true"/>
+                <call expression="addObject(batas27,275,261)" expression-java="addObject(batas27, 275, 261)" enable="true"/>
+                <variable type="batas2" type-java="batas2" name="batas28" value="new batas2()" value-java=" new batas2()" enable="true"/>
+                <call expression="addObject(batas28,325,261)" expression-java="addObject(batas28, 325, 261)" enable="true"/>
+                <variable type="batas2" type-java="batas2" name="batas29" value="new batas2()" value-java=" new batas2()" enable="true"/>
+                <call expression="addObject(batas29,375,261)" expression-java="addObject(batas29, 375, 261)" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="act" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <call expression="showText(score+&quot; m&quot;,40,20)" expression-java="showText(score + &quot; m&quot;, 40, 20)" enable="true"/>
+                <call expression="showText(&quot;Tires : &quot;+tires,340,20)" expression-java="showText(&quot;Tires : &quot; + tires, 340, 20)" enable="true"/>
+                <call expression="changeToNight(malam)" expression-java="changeToNight(malam)" enable="true"/>
+                <if condition="score&gt;100&amp;&amp;score&lt;=200" condition-java="score &gt; 100 &amp;&amp; score &lt;= 200" enable="true">
+                    <ifStatements>
+                        <call expression="Greenfoot.setSpeed(52)" expression-java="Greenfoot.setSpeed(52)" enable="true"/>
+                        <assign dest="malam" dest-java="malam" src="1" src-java="1" enable="true"/>
+                    </ifStatements>
+                    <elseIf condition="score&gt;200&amp;&amp;score&lt;=300" condition-java="score &gt; 200 &amp;&amp; score &lt;= 300">
+                        <call expression="Greenfoot.setSpeed(54)" expression-java="Greenfoot.setSpeed(54)" enable="true"/>
+                        <assign dest="malam" dest-java="malam" src="0" src-java="0" enable="true"/>
+                    </elseIf>
+                    <elseIf condition="score&gt;300&amp;&amp;score&lt;=400" condition-java="score &gt; 300 &amp;&amp; score &lt;= 400">
+                        <call expression="Greenfoot.setSpeed(56)" expression-java="Greenfoot.setSpeed(56)" enable="true"/>
+                        <assign dest="malam" dest-java="malam" src="1" src-java="1" enable="true"/>
+                    </elseIf>
+                    <elseIf condition="score&gt;400&amp;&amp;score&lt;=500" condition-java="score &gt; 400 &amp;&amp; score &lt;= 500">
+                        <call expression="Greenfoot.setSpeed(58)" expression-java="Greenfoot.setSpeed(58)" enable="true"/>
+                        <assign dest="malam" dest-java="malam" src="0" src-java="0" enable="true"/>
+                    </elseIf>
+                    <elseIf condition="score&gt;500&amp;&amp;score&lt;=600" condition-java="score &gt; 500 &amp;&amp; score &lt;= 600">
+                        <call expression="Greenfoot.setSpeed(60)" expression-java="Greenfoot.setSpeed(60)" enable="true"/>
+                        <assign dest="malam" dest-java="malam" src="1" src-java="1" enable="true"/>
+                    </elseIf>
+                </if>
+                <if condition="score&gt;600&amp;&amp;score&lt;=700" condition-java="score &gt; 600 &amp;&amp; score &lt;= 700" enable="true">
+                    <ifStatements>
+                        <call expression="Greenfoot.setSpeed(62)" expression-java="Greenfoot.setSpeed(62)" enable="true"/>
+                        <assign dest="malam" dest-java="malam" src="0" src-java="0" enable="true"/>
+                    </ifStatements>
+                    <elseIf condition="score&gt;700&amp;&amp;score&lt;=800" condition-java="score &gt; 700 &amp;&amp; score &lt;= 800">
+                        <call expression="Greenfoot.setSpeed(64)" expression-java="Greenfoot.setSpeed(64)" enable="true"/>
+                        <assign dest="malam" dest-java="malam" src="1" src-java="1" enable="true"/>
+                    </elseIf>
+                    <elseIf condition="score&gt;800&amp;&amp;score&lt;=900" condition-java="score &gt; 800 &amp;&amp; score &lt;= 900">
+                        <call expression="Greenfoot.setSpeed(66)" expression-java="Greenfoot.setSpeed(66)" enable="true"/>
+                        <assign dest="malam" dest-java="malam" src="0" src-java="0" enable="true"/>
+                    </elseIf>
+                    <elseIf condition="score&gt;900&amp;score&lt;=1000" condition-java="score &gt; 900 &amp; score &lt;= 1000">
+                        <call expression="Greenfoot.setSpeed(68)" expression-java="Greenfoot.setSpeed(68)" enable="true"/>
+                        <assign dest="malam" dest-java="malam" src="1" src-java="1" enable="true"/>
+                    </elseIf>
+                    <elseIf condition="score&gt;1000" condition-java="score &gt; 1000">
+                        <call expression="Greenfoot.setSpeed(70)" expression-java="Greenfoot.setSpeed(70)" enable="true"/>
+                        <assign dest="malam" dest-java="malam" src="0" src-java="0" enable="true"/>
+                    </elseIf>
+                </if>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="changeToNight" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params>
+                <params type="int" type-java="int" name="malam"/>
+            </params>
+            <throws/>
+            <body>
+                <if condition="malam==1" condition-java="malam == 1" enable="true">
+                    <ifStatements>
+                        <call expression="setBackground(&quot;bgNight.jpg&quot;)" expression-java="setBackground(&quot;bgNight.jpg&quot;)" enable="true"/>
+                    </ifStatements>
+                    <else>
+                        <call expression="setBackground(&quot;bg.jpg&quot;)" expression-java="setBackground(&quot;bg.jpg&quot;)" enable="true"/>
+                    </else>
+                </if>
+            </body>
+        </method>
+    </methods>
+</class>

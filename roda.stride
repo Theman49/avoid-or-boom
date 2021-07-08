@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="roda" extends="car01" extends-java="car01" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.util.*" enable="true"/>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields/>
+    <constructors>
+        <constructor access="public" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <call expression="setImage(&quot;roda.png&quot;)" expression-java="setImage(&quot;roda.png&quot;)" enable="true"/>
+            </body>
+        </constructor>
+    </constructors>
+    <methods>
+        <method access="public" type="void" type-java="void" name="act" enable="true">
+            <javadoc xml:space="preserve">Act - do whatever the roda wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <variable type="int" type-java="int" name="tires" value="((MyWorld)getWorld()).tires" value-java="((MyWorld)getWorld()).tires" enable="true"/>
+                <if condition="tires&gt;=0" condition-java="tires &gt;= 0" enable="true">
+                    <ifStatements>
+                        <call expression="setRotation(getRotation()+5)" expression-java="setRotation(getRotation() + 5)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <call expression="move(1)" expression-java="move(1)" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="move" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params>
+                <params type="int" type-java="int" name="n"/>
+            </params>
+            <throws/>
+            <body>
+                <if condition="((MyWorld)getWorld()).score&gt;100" condition-java="((MyWorld)getWorld()).score &gt; 100" enable="true">
+                    <ifStatements>
+                        <assign dest="n" dest-java="n" src="2" src-java="2" enable="true"/>
+                    </ifStatements>
+                </if>
+                <variable type="car01" type-java="car01" name="car" value="getWorld().getObjects(car01.class).get(0)" value-java="getWorld().getObjects(car01.class).get(0)" enable="true"/>
+                <if condition="Greenfoot.mouseDragged(car)" condition-java="Greenfoot.mouseDragged(car)" enable="true">
+                    <ifStatements>
+                        <variable type="int" type-java="int" name="y" value="Greenfoot.getMouseInfo().getY()+13" value-java="Greenfoot.getMouseInfo().getY() + 13" enable="true"/>
+                        <if condition="y&gt;165+10&amp;&amp;y&lt;270-16" condition-java="y &gt; 165 + 10 &amp;&amp; y &lt; 270 - 16" enable="true">
+                            <ifStatements>
+                                <call expression="setLocation(getX(),y)" expression-java="setLocation(getX(), y)" enable="true"/>
+                            </ifStatements>
+                        </if>
+                    </ifStatements>
+                </if>
+            </body>
+        </method>
+    </methods>
+</class>

@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=garisJalan
+comment0.text=\n\ \n
+comment1.params=
+comment1.target=garisJalan()
+comment1.text=\n\ \n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\n\ Act\ -\ do\ whatever\ the\ garisJalan\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment3.params=speed
+comment3.target=void\ move(int)
+comment3.text=\n\ \n
+comment4.params=
+comment4.target=void\ looping()
+comment4.text=\n\ \n
+numComments=5

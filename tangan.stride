@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="tangan" extends="Actor" extends-java="Actor" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.util.*" enable="true"/>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields>
+        <variable access="public" type="int" type-java="int" name="n" value="251" value-java="251" enable="true"/>
+        <variable access="public" type="int" type-java="int" name="a" value="0" value-java="0" enable="true"/>
+    </fields>
+    <constructors>
+        <constructor access="public" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <call expression="setImage(&quot;tangan.png&quot;)" expression-java="setImage(&quot;tangan.png&quot;)" enable="true"/>
+            </body>
+        </constructor>
+    </constructors>
+    <methods>
+        <method access="public" type="void" type-java="void" name="act" enable="true">
+            <javadoc xml:space="preserve">Act - do whatever the tangan wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <call expression="move()" expression-java="move()" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="move" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <if condition="a==0" condition-java="a == 0" enable="true">
+                    <ifStatements>
+                        <call expression="setLocation(getX(),getY()-1)" expression-java="setLocation(getX(), getY() - 1)" enable="true"/>
+                        <assign dest="n" dest-java="n" src="n-1" src-java="n - 1" enable="true"/>
+                        <if condition="n==200" condition-java="n == 200" enable="true">
+                            <ifStatements>
+                                <assign dest="a" dest-java="a" src="1" src-java="1" enable="true"/>
+                            </ifStatements>
+                        </if>
+                    </ifStatements>
+                </if>
+                <if condition="a==1" condition-java="a == 1" enable="true">
+                    <ifStatements>
+                        <call expression="setLocation(getX(),getY()+1)" expression-java="setLocation(getX(), getY() + 1)" enable="true"/>
+                        <assign dest="n" dest-java="n" src="n+1" src-java="n + 1" enable="true"/>
+                        <if condition="n==260" condition-java="n == 260" enable="true">
+                            <ifStatements>
+                                <assign dest="a" dest-java="a" src="0" src-java="0" enable="true"/>
+                            </ifStatements>
+                        </if>
+                    </ifStatements>
+                </if>
+            </body>
+        </method>
+    </methods>
+</class>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="awan" extends="garisJalan" extends-java="garisJalan" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.util.*" enable="true"/>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields/>
+    <constructors>
+        <constructor access="public" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <call expression="setImage(&quot;awan.png&quot;)" expression-java="setImage(&quot;awan.png&quot;)" enable="true"/>
+            </body>
+        </constructor>
+    </constructors>
+    <methods>
+        <method access="public" type="void" type-java="void" name="act" enable="true">
+            <javadoc xml:space="preserve">Act - do whatever the awan wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
+
+y =54</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <variable type="int" type-java="int" name="score" value="((MyWorld)getWorld()).score" value-java="((MyWorld)getWorld()).score" enable="true"/>
+                <variable type="int" type-java="int" name="malam" value="((MyWorld)getWorld()).malam" value-java="((MyWorld)getWorld()).malam" enable="true"/>
+                <call expression="move(super.speed)" expression-java="move(super.speed)" enable="true"/>
+                <call expression="changeToNight(malam)" expression-java="changeToNight(malam)" enable="true"/>
+                <if condition="score&gt;100&amp;&amp;score&lt;=200" condition-java="score &gt; 100 &amp;&amp; score &lt;= 200" enable="true">
+                    <ifStatements>
+                        <call expression="Greenfoot.setSpeed(52)" expression-java="Greenfoot.setSpeed(52)" enable="true"/>
+                        <assign dest="malam" dest-java="malam" src="1" src-java="1" enable="true"/>
+                    </ifStatements>
+                    <elseIf condition="score&gt;200&amp;&amp;score&lt;=300" condition-java="score &gt; 200 &amp;&amp; score &lt;= 300">
+                        <call expression="Greenfoot.setSpeed(54)" expression-java="Greenfoot.setSpeed(54)" enable="true"/>
+                        <assign dest="malam" dest-java="malam" src="0" src-java="0" enable="true"/>
+                    </elseIf>
+                    <elseIf condition="score&gt;300&amp;&amp;score&lt;=400" condition-java="score &gt; 300 &amp;&amp; score &lt;= 400">
+                        <call expression="Greenfoot.setSpeed(56)" expression-java="Greenfoot.setSpeed(56)" enable="true"/>
+                        <assign dest="malam" dest-java="malam" src="1" src-java="1" enable="true"/>
+                    </elseIf>
+                    <elseIf condition="score&gt;400&amp;&amp;score&lt;=500" condition-java="score &gt; 400 &amp;&amp; score &lt;= 500">
+                        <call expression="Greenfoot.setSpeed(58)" expression-java="Greenfoot.setSpeed(58)" enable="true"/>
+                        <assign dest="malam" dest-java="malam" src="0" src-java="0" enable="true"/>
+                    </elseIf>
+                    <elseIf condition="score&gt;500&amp;&amp;score&lt;=600" condition-java="score &gt; 500 &amp;&amp; score &lt;= 600">
+                        <call expression="Greenfoot.setSpeed(60)" expression-java="Greenfoot.setSpeed(60)" enable="true"/>
+                        <assign dest="malam" dest-java="malam" src="1" src-java="1" enable="true"/>
+                    </elseIf>
+                </if>
+                <if condition="score&gt;600&amp;&amp;score&lt;=700" condition-java="score &gt; 600 &amp;&amp; score &lt;= 700" enable="true">
+                    <ifStatements>
+                        <call expression="Greenfoot.setSpeed(62)" expression-java="Greenfoot.setSpeed(62)" enable="true"/>
+                        <assign dest="malam" dest-java="malam" src="0" src-java="0" enable="true"/>
+                    </ifStatements>
+                    <elseIf condition="score&gt;700&amp;&amp;score&lt;=800" condition-java="score &gt; 700 &amp;&amp; score &lt;= 800">
+                        <call expression="Greenfoot.setSpeed(64)" expression-java="Greenfoot.setSpeed(64)" enable="true"/>
+                        <assign dest="malam" dest-java="malam" src="1" src-java="1" enable="true"/>
+                    </elseIf>
+                    <elseIf condition="score&gt;800&amp;&amp;score&lt;=900" condition-java="score &gt; 800 &amp;&amp; score &lt;= 900">
+                        <call expression="Greenfoot.setSpeed(66)" expression-java="Greenfoot.setSpeed(66)" enable="true"/>
+                        <assign dest="malam" dest-java="malam" src="0" src-java="0" enable="true"/>
+                    </elseIf>
+                    <elseIf condition="score&gt;900&amp;score&lt;=1000" condition-java="score &gt; 900 &amp; score &lt;= 1000">
+                        <call expression="Greenfoot.setSpeed(68)" expression-java="Greenfoot.setSpeed(68)" enable="true"/>
+                        <assign dest="malam" dest-java="malam" src="1" src-java="1" enable="true"/>
+                    </elseIf>
+                    <elseIf condition="score&gt;1000" condition-java="score &gt; 1000">
+                        <call expression="Greenfoot.setSpeed(70)" expression-java="Greenfoot.setSpeed(70)" enable="true"/>
+                        <assign dest="malam" dest-java="malam" src="0" src-java="0" enable="true"/>
+                    </elseIf>
+                </if>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="changeToNight" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params>
+                <params type="int" type-java="int" name="malam"/>
+            </params>
+            <throws/>
+            <body>
+                <if condition="malam==1" condition-java="malam == 1" enable="true">
+                    <ifStatements>
+                        <call expression="setImage(&quot;stars.png&quot;)" expression-java="setImage(&quot;stars.png&quot;)" enable="true"/>
+                        <call expression="setLocation(getX(),57)" expression-java="setLocation(getX(), 57)" enable="true"/>
+                    </ifStatements>
+                    <elseIf condition="malam==0" condition-java="malam == 0">
+                        <call expression="setImage(&quot;awan.png&quot;)" expression-java="setImage(&quot;awan.png&quot;)" enable="true"/>
+                        <call expression="setLocation(getX(),24)" expression-java="setLocation(getX(), 24)" enable="true"/>
+                    </elseIf>
+                </if>
+            </body>
+        </method>
+    </methods>
+</class>

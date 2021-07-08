@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="car01" extends="Actor" extends-java="Actor" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.util.*" enable="true"/>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields>
+        <variable access="public" type="int" type-java="int" name="speed" value="((MyWorld)getWorld()).speed" value-java="((MyWorld)getWorld()).speed" enable="true"/>
+        <variable access="public" type="int" type-java="int" name="cek" value="0" value-java="0" enable="true"/>
+    </fields>
+    <constructors>
+        <constructor access="public" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <call expression="setImage(&quot;car01-n.png&quot;)" expression-java="setImage(&quot;car01-n.png&quot;)" enable="true"/>
+            </body>
+        </constructor>
+    </constructors>
+    <methods>
+        <method access="public" type="void" type-java="void" name="act" enable="true">
+            <javadoc xml:space="preserve">Act - do whatever the garisJalan wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <call expression="move(1)" expression-java="move(1)" enable="true"/>
+                <call expression="touch()" expression-java="touch()" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="move" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params>
+                <params type="int" type-java="int" name="n"/>
+            </params>
+            <throws/>
+            <body>
+                <variable type="int" type-java="int" name="random" value="Greenfoot.getRandomNumber(100)" value-java="Greenfoot.getRandomNumber(100)" enable="true"/>
+                <if condition="((MyWorld)getWorld()).score&gt;100" condition-java="((MyWorld)getWorld()).score &gt; 100" enable="true">
+                    <ifStatements>
+                        <assign dest="n" dest-java="n" src="2" src-java="2" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="Greenfoot.mouseDragged(this)" condition-java="Greenfoot.mouseDragged(this)" enable="true">
+                    <ifStatements>
+                        <variable type="int" type-java="int" name="x" value="Greenfoot.getMouseInfo().getX()" value-java="Greenfoot.getMouseInfo().getX()" enable="true"/>
+                        <variable type="int" type-java="int" name="y" value="Greenfoot.getMouseInfo().getY()" value-java="Greenfoot.getMouseInfo().getY()" enable="true"/>
+                        <if condition="y&gt;165-3&amp;&amp;y&lt;270-30" condition-java="y &gt; 165 - 3 &amp;&amp; y &lt; 270 - 30" enable="true">
+                            <ifStatements>
+                                <call expression="setLocation(getX(),y)" expression-java="setLocation(getX(), y)" enable="true"/>
+                            </ifStatements>
+                        </if>
+                    </ifStatements>
+                </if>
+                <if condition="random*30==((MyWorld)getWorld()).score" condition-java="random * 30 == ((MyWorld)getWorld()).score" enable="true">
+                    <ifStatements>
+                        <call expression="bonus()" expression-java="bonus()" enable="true"/>
+                    </ifStatements>
+                </if>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="bonus" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <if condition="cek==0" condition-java="cek == 0" enable="true">
+                    <ifStatements>
+                        <variable type="int" type-java="int" name="random" value="Greenfoot.getRandomNumber(2)" value-java="Greenfoot.getRandomNumber(2)" enable="true"/>
+                        <variable type="int" type-java="int" name="random2" value="Greenfoot.getRandomNumber(5)" value-java="Greenfoot.getRandomNumber(5)" enable="true"/>
+                        <variable type="int" type-java="int" name="a" value="0" value-java="0" enable="true"/>
+                        <if condition="random2==3" condition-java="random2 == 3" enable="true">
+                            <ifStatements>
+                                <if condition="random==0" condition-java="random == 0" enable="true">
+                                    <ifStatements>
+                                        <assign dest="a" dest-java="a" src="188" src-java="188" enable="true"/>
+                                    </ifStatements>
+                                    <elseIf condition="random==1" condition-java="random == 1">
+                                        <assign dest="a" dest-java="a" src="223" src-java="223" enable="true"/>
+                                    </elseIf>
+                                </if>
+                                <variable type="bonus" type-java="bonus" name="ban" value="new bonus()" value-java=" new bonus()" enable="true"/>
+                                <call expression="getWorld().addObject(ban,400,a)" expression-java="getWorld().addObject(ban, 400, a)" enable="true"/>
+                                <assign dest="cek" dest-java="cek" src="1" src-java="1" enable="true"/>
+                            </ifStatements>
+                        </if>
+                    </ifStatements>
+                </if>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="touch" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <if condition="cek==1" condition-java="cek == 1" enable="true">
+                    <ifStatements>
+                        <variable type="bonus" type-java="bonus" name="ban" value="getWorld().getObjects(bonus.class).get(0)" value-java="getWorld().getObjects(bonus.class).get(0)" enable="true"/>
+                        <call expression="ban.setLocation(ban.getX()-speed,ban.getY())" expression-java="ban.setLocation(ban.getX() - speed, ban.getY())" enable="true"/>
+                        <if condition="isTouching(bonus.class)" condition-java="isTouching(bonus.class)" enable="true">
+                            <ifStatements>
+                                <call expression="getWorld().removeObject(ban)" expression-java="getWorld().removeObject(ban)" enable="true"/>
+                                <assign dest="cek" dest-java="cek" src="0" src-java="0" enable="true"/>
+                                <assign dest="((MyWorld)getWorld()).tires" dest-java="((MyWorld)getWorld()).tires" src="((MyWorld)getWorld()).tires+1" src-java="((MyWorld)getWorld()).tires + 1" enable="true"/>
+                            </ifStatements>
+                            <else>
+                                <if condition="ban.getX()==0" condition-java="ban.getX() == 0" enable="true">
+                                    <ifStatements>
+                                        <call expression="getWorld().removeObject(ban)" expression-java="getWorld().removeObject(ban)" enable="true"/>
+                                        <assign dest="cek" dest-java="cek" src="0" src-java="0" enable="true"/>
+                                    </ifStatements>
+                                </if>
+                            </else>
+                        </if>
+                    </ifStatements>
+                </if>
+            </body>
+        </method>
+    </methods>
+</class>

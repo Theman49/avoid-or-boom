@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="home" extends="World" extends-java="World" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.util.*" enable="true"/>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields/>
+    <constructors>
+        <constructor access="public" enable="true">
+            <javadoc xml:space="preserve">Constructor for objects of class home.</javadoc>
+            <params/>
+            <throws/>
+            <delegate target="super" params="400,300,1" params-java="400, 300, 1"/>
+            <body>
+                <call expression="prepare()" expression-java="prepare()" enable="true"/>
+            </body>
+        </constructor>
+    </constructors>
+    <methods>
+        <method access="private" type="void" type-java="void" name="prepare" enable="true">
+            <javadoc xml:space="preserve">Prepare the world for the start of the program.
+That is: create the initial objects and add them to the world.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <call expression="setBackground(&quot;background2.png&quot;)" expression-java="setBackground(&quot;background2.png&quot;)" enable="true"/>
+                <variable type="start" type-java="start" name="start" value="new start()" value-java=" new start()" enable="true"/>
+                <call expression="addObject(start,191,189)" expression-java="addObject(start, 191, 189)" enable="true"/>
+                <variable type="howToPlay" type-java="howToPlay" name="howToPlay" value="new howToPlay()" value-java=" new howToPlay()" enable="true"/>
+                <call expression="addObject(howToPlay,193,223)" expression-java="addObject(howToPlay, 193, 223)" enable="true"/>
+                <variable type="title" type-java="title" name="title" value="new title()" value-java=" new title()" enable="true"/>
+                <call expression="addObject(title,198,74)" expression-java="addObject(title, 198, 74)" enable="true"/>
+            </body>
+        </method>
+    </methods>
+</class>
